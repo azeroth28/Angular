@@ -7,16 +7,31 @@ import { ProductosService } from '../servicios/productos.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title="asi me bindeas bebe"
-  modificado =false
-  cambiarT(){
-    this.title = "que cambias? la concha de tu madre!"
-    this.modificado = true
-  }
+  productos: any= []
+  productosAsync:any=[]
+  productosObs:any=[]
+  loading=true
   constructor(
     private productosService:ProductosService
   ){
-    this.productos = this.productosService.getAll()
+    this.productosService.getAll()
+     .subscribe({
+       next:(data:any)=>{
+         console.log(data)
+         this.productos=data.results
+        this.loading=false
+       },
+       error:error=>{
+         console.log(error)
+       }
+     })
+  }
+
+  async init(){
+    try{
+      const response:any = await this.productosService.getAllPromise()
+      this.productosAsync = response["results"]
+    }catch(e){}
   }
 
   ngOnInit(): void {
