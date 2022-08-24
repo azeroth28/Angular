@@ -5,21 +5,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { CatalogoComponent } from './catalogo/catalogo.component';
-import { RegistroComponent } from './registro/registro.component';
-import { LoginComponent } from './login/login.component';
-import { DetalleComponent } from './detalle/detalle.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MenuComponent } from './paginas/menu/menu.component';
+import { DetalleComponent } from './paginas/detalle/detalle.component';
+import { RegistroComponent } from './paginas/registro/registro.component';
+import { LoginComponent } from './paginas/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CatalogoComponent,
+    DetalleComponent,
+    MenuComponent,
     RegistroComponent,
-    LoginComponent,
-    DetalleComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

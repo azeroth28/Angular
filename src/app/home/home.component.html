@@ -1,8 +1,9 @@
 <h1>a ver si funca</h1>
 <div>
     <div *ngFor="let producto of productos">
-        <h2>{{producto.title}}</h2>
-        <h2>{{producto.price}}</h2>
+        <h2>{{producto.name}}</h2>
+        <!-- <h2>{{producto.url}}</h2> -->
+        <button routerLink="/{{producto.id}}">Ver Detalle</button>
 
     </div>
 </div>

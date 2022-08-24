@@ -15,6 +15,9 @@ export class ProductosService {
    getAllPromise(){
     return lastValueFrom(this.http.get("https://pokeapi.co/api/v2/pokemon/?limit=16&offset=0"))
    }
+   getById(id:string){
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/"+id)
+   }
 }
 
 // // export function getPokemonById(id){

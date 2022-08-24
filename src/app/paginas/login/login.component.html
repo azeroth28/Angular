@@ -1,0 +1,18 @@
+<form [formGroup]="myForm" (ngSubmit)="ingresar()">
+    
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email">
+    </div>
+    <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">
+        <p *ngIf="myForm.get('email')?.hasError('required')">El campo es obligatorio</p>
+    </div>
+    <div>
+        <label>Contraseña</label>
+        <input type="password" formControlName="password">
+    </div>
+    <div *ngIf="myForm.get('password')?.errors && myForm.get('password')?.dirty">
+        <p *ngIf="myForm.get('password')?.hasError('required')">El campo es obligatorio</p>
+    </div>
+    <button [disabled]="myForm.invalid" type="submit">Ingresar </button>
+</form>

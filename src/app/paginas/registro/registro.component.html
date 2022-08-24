@@ -13,6 +13,10 @@
         <label>Apellido</label>
         <input type="text" formControlName="apellido">
     </div>
+    <div *ngIf="myForm.get('apellido')?.errors && myForm.get('apellido')?.dirty">
+        <p *ngIf="myForm.get('apellido')?.hasError('required')">El campo es obligatorio</p>
+        <p *ngIf="myForm.get('apellido')?.hasError('minlength')">Debe escribir al menos 3 caracteres</p>
+    </div>
     <div>
         <label>Telefono</label>
         <input type="text" formControlName="telefono">
