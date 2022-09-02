@@ -2,9 +2,10 @@ export interface Producto{
     id:string;
     name:string;
     height:string;
+    weight:string;
     sprites:{
-        front_default:string
-    }
+         front_default:string
+     };
 
 }
 

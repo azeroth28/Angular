@@ -1,9 +1,9 @@
-<h1>a ver si funca</h1>
-<div>
+<div >
+    <h1>Elige tu pokemon</h1>
     <div *ngFor="let producto of productos">
         <h2>{{producto.name}}</h2>
-        <!-- <h2>{{producto.url}}</h2> -->
-        <button routerLink="/{{producto.id}}">Ver Detalle</button>
+        <img src="{{producto.front_default}}" alt="">
+        <button routerLink="/productos/{{producto.name}}">Ver Detalle</button>
 
     </div>
 </div>

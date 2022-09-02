@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosService } from 'src/app/servicios/productos.service';
-import { Producto } from 'src/app/interfaces/producto';
+import { Producto } from 'src/app/interfaces/productos';
 
 @Component({
   selector: 'app-detalle',
@@ -11,17 +11,17 @@ import { Producto } from 'src/app/interfaces/producto';
 export class DetalleComponent implements OnInit {
   producto!: Producto
   constructor(
-    private productosService:ProductosService,
+    private productsService:ProductosService,
     private activateRoute:ActivatedRoute 
   ) {
     const id = this.activateRoute.snapshot.paramMap.get("id")
     console.log("id",id)
     if(id){
-    this.productosService.getById(id)
-    .subscribe((data:Producto)=>{
-      this.producto=data
+    this.productsService.getById(id)
+     .subscribe((data:Producto)=>{
+       this.producto=data
 
-    })
+     })
     }
    }
 
