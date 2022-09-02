@@ -1,4 +1,11 @@
-<p>home works!</p>
-<h1>{{title}}</h1>
-<input type="text" [(ngModel)]="title" >
-<button [disabled]="modificado" (click)="cambiarT()"> cambiar titulo</button>
+<div >
+    <h1>Elige tu pokemon</h1>
+    <div *ngFor="let producto of productos">
+        <h2>{{producto.name}}</h2>
+        <img src="{{producto.front_default}}" alt="">
+        <button routerLink="/productos/{{producto.name}}">Ver Detalle</button>
+
+    </div>
+</div>
+
+
